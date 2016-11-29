@@ -4,7 +4,11 @@
 
 var path = require('path');
 var http = require('http');
-var fs = require('fs');
+//var fs = require('fs');
+var exphbs = require('express-handlebars');
+var express = require('express');
+var app = express();
+
 
 var staticDir = path.join(__dirname, 'public');
 var indexFilename = 'index.html';
@@ -12,8 +16,32 @@ var notFoundFilename = '404.html';
 var port = process.env.PORT || 3000;
 var cache = {};
 
-cache["404.html"] = fs.readFileSync(staticDir + "\\" + "404.html");
+//cache["404.html"] = fs.readFileSync(staticDir + "\\" + "404.html");
 
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+app.use(express.static('public'));
+
+app.get('/', function (req, res) {
+  res.status(200).render('index',{
+    title: "Chatbot!"
+ });
+});
+
+
+app.get('*', function (req, res) {
+  res.status(404).render('404',{
+    title: "Chatbot!"
+ });
+});
+
+// Listen on the specified port.
+app.listen(port, function () {
+  console.log("== Listening on port", port);
+});
+
+/*
 var requestHandler = function(request, response){
   if(request.url !== "/favicon.ico"){
     if(request.url == "/"){
@@ -57,4 +85,4 @@ server.listen(port, function(err) {
   }
 
   console.log('server is listening on ' + port);
-});
+});*/

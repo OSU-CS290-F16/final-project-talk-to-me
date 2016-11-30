@@ -1,0 +1,38 @@
+<main style="text-align:center; padding-left: 0px;">
+	<div class="text-container">
+		<h1>DONATE WITH PAYPAL:</h1>
+
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="327PATJBJTGLU">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+
+		<h2></h2><!--for a little bit of spacing-->
+
+		<h1>DONATE WITH BITCOIN:</h1>
+		<script src="//blockr.io/js_external/coinwidget/coin.js"></script>
+		<script>
+			CoinWidgetCom.go({
+				wallet_address: '1K96cHxqcp27esLPV5YroVZXBfSEYgEkBo',
+				currency: 'bitcoin',
+				counter: 'hide',
+				lbl_button: 'Give us your money :)',
+				lbl_count: 'donations',
+				lbl_amount: 'BTC',
+				lbl_address: 'Use wallet address below. Donate!',
+				qrcode: false,
+				alignment: 'bl',
+				decimals: 8,
+				size: "big",
+				color: "light",
+				countdownFrom: "0",
+				element: "#coinwidget-bitcoin-1K96cHxqcp27esLPV5YroVZXBfSEYgEkBo",
+				onShow: function(){},
+				onHide: function(){}
+			});
+		</script>
+		<div id="coinwidget-bitcoin-1K96cHxqcp27esLPV5YroVZXBfSEYgEkBo"></div>
+	</div>
+</main>

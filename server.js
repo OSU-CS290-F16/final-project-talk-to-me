@@ -29,6 +29,11 @@ app.get('/', function (req, res) {
  });
 });
 
+app.get('/donate', function (req, res) {
+  res.status(200).render('donate',{
+    title: "Feed Chatbot!"
+ });
+});
 
 app.get('*', function (req, res) {
   res.status(404).render('404',{

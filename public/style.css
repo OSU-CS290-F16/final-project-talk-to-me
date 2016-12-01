@@ -94,9 +94,10 @@ footer {
 }
 
 .text-container {
-  background-color: white;
+  background-image: url("money.jpg");
+  background-repeat: repeat;
   text-align: center;
   padding: 20px;
-  width: 300px;
+  width: 500px;
   margin: auto;
 }
